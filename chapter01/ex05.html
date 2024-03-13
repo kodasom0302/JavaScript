@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>자바스크립트</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>switch case문</h2>
+    </body>
+
+<script>
+    let code=window.prompt("과목코드를 입력하세요")
+    //let code=prompt("과목코드를 입력하세요")
+    console.log(typeof code)
+    console.log(code)
+
+    let no=Number.parseInt(code)   //"1"을 1로 바꿔줌
+    //let no=parseInt(code)
+
+    switch(no){
+        case 1:
+            console.log("R101호")
+            break
+        case 2:
+            console.log("R202호")
+            break
+        case 3:
+            console.log("R303호")
+            break
+        case 4:
+            console.log("R404호")
+            break
+        default :
+            console.log("상담원에게 문의하세요")
+    }
+</script>
+</html>
