@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>자바스크립트</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>함수</h2>
+    </body>
+
+<script>
+    //기명 함수
+    function testA(){
+        console.log("testA 기명 함수");
+    }
+    //함수 정의는 위에 있는 효과가 생긴다(함수는 리허설 때 미리 조사해 둔다)
+
+    testA();    //testA : 이름, () : 실행
+
+    window.console.log("================================");
+
+    /*
+    let testB;
+    testB=function(){
+
+    }
+    */
+
+    //익명 함수
+    //변수에 함수를 대입 - 익명함수 정의
+    let testB=function(){
+                  console.log("이름이 없는 익명 함수")
+                }
+    testB();    //변수 실행 - 변수 안에 함수가 있어서 실행 가능
+</script>
+</html>
