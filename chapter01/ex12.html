@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>자바스크립트</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>변수의 범위</h2>
+    </body>
+
+<script>
+    /*
+    let str="global";   //전역 변수 선언
+
+    //정의
+    function checkScope(){
+        let str="local";    //지역 변수 : 이 안에서만 쓰겠다
+        console.log(str);
+    }
+
+    //실행
+    checkScope();   //checkScope 부르고, () 실행 - local
+
+    console.log(str);   //global
+    */
+
+   /*
+    let str="global";
+
+    function checkScope(){
+        str="local";    //global -> local
+        console.log(str);   //local
+    }
+
+    checkScope();
+    console.log(str);   //local
+    */
+
+   let str="global";
+
+   function checkScope(){
+        str="local";    //global -> local
+        console.log(str);   //local
+
+        str2="로컬";    //let str2;의 효과가 나타남
+   }
+
+   checkScope();
+   console.log(str);    //local
+
+   console.log(str2);   //로컬
+</script>
+</html>
