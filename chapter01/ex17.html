@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>자바스크립트</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <h1>자바스크립트</h1>
+        <h2>소제목</h2>
+    </body>
+
+<script>
+    //배열 만들기
+    let areaList=[];
+
+    //객체 만들기
+    let triangle={
+        name: "삼각형",
+        width: 5,
+        area: function(){
+            console.log(23.52);
+        }
+    };
+
+    let ractangle={
+        name: "사각형",
+        width: 5,
+        area: function(){
+            console.log(34.23);
+        }
+    };
+
+    let circle={
+        name: "원",
+        width: 5,
+        area: function(){
+            console.log(23.45);
+        }
+    };
+
+    //배열에 객체 넣기
+    areaList.push(triangle);
+    areaList.push(ractangle);
+    areaList.push(circle);
+
+    //for문을 사용하여 배열 출력하기
+    for(let i=0; i<=areaList.length; i++){
+        console.log(areaList[i].name+"의 넓이는 = "+areaList[i].area());
+    };
+</script>
+</html>
+window.console.log("================================");
