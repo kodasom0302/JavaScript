@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="" rel="stylesheet">
+
+	<style>
+		#p2{
+			color: red;
+		}
+	</style>
+
+</head>
+
+<body>
+	<ul>
+		<li>첫번째아이템입니다.</li>
+		<li>두번째아이템입니다.</li>
+		<li>세번째아이템입니다.</li>
+		<li>네번째아이템입니다.</li>
+		<li>다섯번째아이템입니다.</li>
+		<li>여섯번째아이템입니다.</li>
+	</ul>
+
+	<p id="p1" style="color: blue;">안녕하새우</p>
+	<p id="p2">고다솜입니더</p>
+	
+
+</body>
+
+<script>
+	//DOM tree
+	document.addEventListener("DOMContentLoaded", function(){
+
+		let ulTag=document.querySelector("ul");
+		console.log(ulTag);
+
+		ulTag.style.fontSize="20px";
+		ulTag.style.border="1px solid black";
+
+		ulTag.firstElementChild.style.fontFamily="궁서";
+		ulTag.firstElementChild.style.backgroundColor="#d6d6d6";
+		ulTag.firstElementChild.style.width="400px";
+		ulTag.firstElementChild.style.padding="10px";
+
+		ulTag.lastElementChild.style.borderWidth="5px";
+		ulTag.lastElementChild.style.borderStyle="dotted";
+		ulTag.lastElementChild.style.borderColor="#ff0000";
+
+		ulTag.style.listStyleType="none";
+
+		let p1Tag=document.querySelector("#p1");
+		console.log(p1Tag.style.color);
+
+		console.log(ulTag.style.border);
+
+		let p2Tag=document.querySelector("#p2");
+		console.log(p2Tag.style.color);	//인라인으로 된 것만 읽을 수 있다
+	})
+</script>
+
+</html>
