@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+   <link href="" rel="stylesheet">
+</head>
+
+<body>
+   <ul>
+      <li>첫 번째 아이템 입니다.</li>
+      <li>두 번째 아이템 입니다.</li>
+      <li>세 번째 아이템 입니다.</li>
+      <li>네 번째 아이템 입니다.</li>
+      <li>다섯 번째 아이템 입니다.</li>
+   </ul>
+
+   <button id="btnBefore" type="button">앞에 추가</button>
+   <button id="btnAfter" type="button">뒤에 추가</button>
+</body>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function (){
+
+         //앞에 추가 버튼을 클릭할 때
+         let btnBefore=document.querySelector("#btnBefore");
+         btnBefore.addEventListener("click", function(){
+            let ul=document.querySelector("ul");
+
+            let str="<li>앞에 추가된 아이템 입니다.</li>";
+            ul.insertAdjacentHTML("afterbegin", str);
+         });
+
+         //뒤에 추가 버튼을 클릭할 때
+         let btnAfter=document.querySelector("#btnAfter");
+         btnAfter.addEventListener("click", function(){
+            let ul=document.querySelector("ul");
+
+            let str="<li>뒤에 추가된 아이템 입니다.</li>";
+            ul.insertAdjacentHTML("beforeend", str);
+         });
+      });
+   </script>
+</html>
