@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+   <link href="" rel="stylesheet">
+</head>
+
+<body>
+   <ul>
+      <li>첫 번째 아이템 입니다.</li>
+      <li>두 번째 아이템 입니다.</li>
+      <li>세 번째 아이템 입니다.</li>
+      <li>네 번째 아이템 입니다.</li>
+      <li>다섯 번째 아이템 입니다.</li>
+      <li>여섯 번째 아이템 입니다.</li>
+      <li>일곱 번째 아이템 입니다.</li>
+      <li>여덟 번째 아이템 입니다.</li>
+      <li>아홉 번째 아이템 입니다.</li>
+      <li>열 번째 아이템 입니다.</li>
+   </ul>
+</body>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function (){
+
+         let liTags=document.querySelectorAll("ul li");
+         console.log(liTags);
+
+         for(let i=0; i<liTags.length; i++){
+            liTags[i].addEventListener("click", function(event){
+               console.log(i+" 번째 아이템 클릭");
+               //this -> 이벤트 리스너가 붙어있는 그 요소
+               //event.target -> 사용자가 실제로 클릭한 그 요소
+
+               /*
+               //this 예제
+               this.remove(); //삭제
+               this.textContent=""; //비우기
+               */
+
+               console.log(event.target);
+
+               //event.target
+               //event.target.remove();
+               event.target.textContent="";
+            });
+         }
+         /*
+         console.log(liTags[0]);
+         liTags[0].addEventListener("click", function(){
+            console.log("1번 클릭");
+         });
+         console.log(liTags[1]);
+         liTags[1].addEventListener("click", function(){
+            console.log("2번 클릭");
+         });
+         */
+      });
+   </script>
+</html>
