@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+</style>
+
+
+</head>
+
+<body>
+    <div>
+        <input id="left" type="text" value=""> 
+        + 
+        <input id="right" type="text" value=""> 
+        <br>
+        <button id="btnPlus" type="button" >더하기</button>
+        <p id="display">0</p>
+    </div>
+</body>
+
+<script>
+    let btnPlus=document.querySelector("#btnPlus");
+    document.addEventListener("DOMContentLoaded", function(){
+        
+        //더하기 버튼 클릭 시
+        btnPlus.addEventListener("click", function(){
+            console.log("클릭");
+
+            //태그 가져오기
+            let left=document.querySelector("#left");
+            let right=document.querySelector("#right");
+            let display=document.querySelector("#display");
+
+            //문자열 -> 정수 변환
+            let leftVal=Number(left.value);
+            let rightVal=Number(right.value);
+
+            //합계 구하기
+            let sum=leftVal+rightVal;
+            console.log(sum);
+
+            //출력
+            display.textContent=sum;
+
+            //비우기
+            left.value="";
+            right.value="";
+        });
+    })
+</script>
+
+</html>
