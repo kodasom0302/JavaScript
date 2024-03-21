@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+   <link href="" rel="stylesheet">
+      <style>
+         ul{
+            width: 200px;
+            padding: 20px;
+            background-color: #00ffff;
+         }
+
+         li{
+            border: 1px solid black;
+         }
+      </style>
+</head>
+
+<body>
+   <ul>
+      <li>첫 번째 아이템 입니다.</li>
+      <li>두 번째 아이템 입니다.</li>
+      <li>세 번째 아이템 입니다.</li>
+      <li>네 번째 아이템 입니다.</li>
+      <li>다섯 번째 아이템 입니다.</li>
+   </ul>
+
+   <button id="btnAfter" type="button">뒤에 추가</button>
+</body>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function (){
+
+         let btnAfter=document.querySelector("#btnAfter");
+         console.log(btnAfter);
+
+         //뒤에 추가 버튼을 클릭했을 때
+         btnAfter.addEventListener("click", function(){
+
+            let ulTag=document.querySelector("ul");
+
+            let str="<li>뒤에 추가된 아이템 입니다</li>";
+            ulTag.insertAdjacentHTML("beforeend", str);
+         })
+
+         //ul요소를 클릭했을 때의 기능을 li요소에 위임
+         let ulTag=document.querySelector("ul");
+         ulTag.addEventListener("click", function(event){
+            console.log(this);   //ul 전체 출력 - 이벤트 리스너가 붙은 요소
+            console.log(event.target); //해당 li만 출력 - 사용자가 실제 클릭한 요소
+            console.log(event.target.tagName);  //li의 태그 네임 -> 대문자 표기
+
+            //선택한 이벤트의 태그 네임이 li면, 해당 타겟을 지워라
+            if(event.target.tagName=="LI"){
+               event.target.remove();
+               //event.target.textContent="";
+            }
+         })
+
+         /*
+         //li 요소를 클릭했을 때 => 새로 추가된 li요소에는 적용되지 않는다
+         let liTags=document.querySelectorAll("li");
+         console.log(liTags);
+         for(let i=0; i<liTags.length; i++){
+            liTags[i].addEventListener("click", function(){
+               console.log("클릭");
+               
+            })
+         }
+         */
+      });
+   </script>
+</html>
