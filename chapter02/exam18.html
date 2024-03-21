@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+</style>
+
+
+</head>
+
+<body>
+    <form id="guestForm" action="/mysite6/guest/add" method="get">
+		<table border="1" width="540px">
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name"></td>
+
+				<td>비밀번호</td>
+				<td><input type="password" name="pw"></td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<textarea cols="72" rows="5" name="content"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<button id="btnWrite" type="submit">등록</button></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+
+</body>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function(){
+		
+		//전송(form의 submit) 버튼
+		let guestForm=document.querySelector("#guestForm");
+		guestForm.addEventListener("submit", function(event){
+			console.log("등록 버튼 클릭");
+			//event.preventDefault();
+
+			//name 태그 불러와서 nameTag에 담기
+			let nameTag=document.querySelector('[name="name"]');
+			//password 태그 불러와서 pwTag에 넣기
+			let pwTag=document.querySelector('[name="password"]');
+
+			//nameTag의 값을 name이라는 변수에 넣기
+			let name=nameTag.value.trim();
+			//pwTag 값 변수 pw에 담기
+			let pw=pwTag.value.trim();
+			//trim() : 공백 없애기 - 값이 없는 건 아니니 폼 전송함
+
+			//name의 타입 확인
+			//console.log(typeof name);
+
+			//이름 체크
+			if(name==""){	//이름을 입력하지 않으면 폼 전송X
+				event.preventDefault();	//폼 기능 제한
+				window.alert("이름을 입력해 주세요");	//경고창
+				return false;
+			}
+
+			//패스워드 체크
+			if(pw==""){	//패스워드 미입력 시 전송 불가능
+				event.preventDefault();	//기능 제한
+				window.alert("패스워드를 입력해 주세요");	//안내창
+				return false;	//이벤트 전파를 막는다
+			}
+
+			//서버로 데이터 전송
+			//보통 return true;를 쓰지 않는다
+		})
+	})
+</script>
+
+</html>
